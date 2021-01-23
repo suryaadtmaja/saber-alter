@@ -1,0 +1,22 @@
+{
+  "name": "test-saber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "saber"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/poppins": "^4.1.0",
+    "nprogress": "^0.2.0",
+    "saber": "^0.11.7",
+    "saber-plugin-query-posts": "^0.4.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "autoprefixer": "^9",
+    "postcss": "^7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "vue-compile": "^0.6.2"
+  }
+}
