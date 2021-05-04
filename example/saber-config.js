@@ -1,48 +1,48 @@
 module.exports = {
   siteConfig: {
-    title: "sadt."
+    title: "sadt.",
   },
   theme: "../src",
+  permalinks: {
+    post: "/labs/:slug",
+    page: "/:slug",
+  },
   themeConfig: {
     name: "Surya",
     job: "Software Engineer",
     socialMedia: [
       {
         text: "linkedin",
-        link: ""
+        link: "",
       },
       {
         text: "github",
-        link: ""
+        link: "",
       },
       {
         text: "dribbble",
-        link: ""
-      }
+        link: "",
+      },
     ],
     nav: [
       {
         text: "Home",
-        link: "/"
+        link: "/",
       },
       {
-        text: "About Me",
-        link: "/about/"
+        text: "Labs",
+        link: "/labs",
       },
-      {
-        text: "Blog",
-        link: "/blog/"
-      }
-    ]
+    ],
   },
   plugins: [
     {
       resolve: "saber-plugin-query-posts",
       options: {
         paginationOptions: {
-          perPage: 2
-        }
-      }
-    }
-  ]
+          perPage: 2,
+        },
+      },
+    },
+  ],
 };

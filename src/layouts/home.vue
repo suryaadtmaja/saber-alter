@@ -1,7 +1,7 @@
 <template>
-  <LayoutContainer>
-    <div class="flex flex-col justify-center h-full section-introduction">
-      <div class="flex flex-col space-y-2 sm:space-y-8">
+  <LayoutContainer :page="page">
+    <div class="flex flex-col justify-center h-screen section-introduction">
+      <div class="flex flex-col space-y-2 sm:space-y-4">
         <h3
           class="text-2xl font-bold tracking-wide md:text-4xl lg:text-6xl text-dark-text"
         >
@@ -39,13 +39,7 @@ import LayoutContainer from "../components/HomeContainer";
 export default {
   props: ["page"],
   components: {
-    LayoutContainer
+    LayoutContainer,
   },
-  methods: {
-    formatDate(v) {
-      const date = new Date(v);
-      return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
-    }
-  }
 };
 </script>

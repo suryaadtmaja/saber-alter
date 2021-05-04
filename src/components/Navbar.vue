@@ -1,16 +1,18 @@
 <template>
-  <div class="flex items-center justify-between px-4 pt-8 sm:p-16">
-    <h3
-      v-if="$siteConfig.title"
-      class="text-2xl font-bold tracking-wide text-gray-100"
-    >
-      {{ $siteConfig.title }}
-    </h3>
-    <div class="sm:hidden">
+  <div
+    class="flex flex-col px-4 p-8 sm:p-16 sm:flex-row sm:justify-between sm:items-center"
+  >
+    <div class="flex justify-between px-8 sm:px-0">
+      <h3
+        v-if="$siteConfig.title"
+        class="text-2xl font-bold tracking-wide text-blue-base"
+      >
+        {{ $siteConfig.title }}
+      </h3>
       <button
         @click="isOpen = !isOpen"
         type="button"
-        class="block text-gray-500 hover:text-white focus:text-white focus:outline-none"
+        class="sm:hidden block text-gray-500  focus:outline-none"
       >
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
           <path
@@ -26,21 +28,26 @@
         </svg>
       </button>
     </div>
-    <div
-      :class="isOpen ? 'block' : 'hidden'"
-      class="sm:flex link space-x-6 sm:space-x-16"
-      v-if="$themeConfig.nav"
-    >
-      <saber-link
-        :key="index"
-        class="lg:text-lg lg:tracking-wide lg:text-dark-text hover:text-blue-base"
-        v-for="(item, index) in $themeConfig.nav"
-        :to="item.link"
-        :class="{
-          'active font-bold': $router.currentRoute == $router.match(item.link)
-        }"
-        >{{ item.text }}</saber-link
+    <div class="mt-2">
+      <nav
+        :class="isOpen ? 'block' : 'hidden'"
+        class="sm:flex sm:flex-row sm:items-center sm:space-y-0 link space-y-2 sm:space-x-16 flex flex-col "
+        v-if="$themeConfig.nav"
       >
+        <saber-link
+          :key="index"
+          class="p-2 text-sm lg:tracking-wide lg:text-dark-text text-dark-text hover:bg-blue-base hover:text-white"
+          v-for="(item, index) in $themeConfig.nav"
+          :to="item.link"
+          tag="a"
+          exact
+          :class="{
+            'active font-bold':
+              $router.currentRoute == $router.match(item.link),
+          }"
+          >{{ item.text }}</saber-link
+        >
+      </nav>
     </div>
   </div>
 </template>
@@ -49,8 +56,8 @@
 export default {
   data() {
     return {
-      isOpen: false
+      isOpen: false,
     };
-  }
+  },
 };
 </script>

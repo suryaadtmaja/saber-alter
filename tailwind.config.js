@@ -4,18 +4,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins"]
-      }
+        sans: ["Poppins"],
+      },
+      colors: {
+        "dark-text": "#092F39",
+        "blue-base": "#0794B9",
+        "secondary-blue": "#2F92AC",
+        "gray-100": "#F7FAFC",
+      },
     },
-    colors: {
-      "dark-text": "#092F39",
-      "blue-base": "#0794B9",
-      "secondary-blue": "#2F92AC",
-      "gray-100": "#F7FAFC"
-    }
   },
   variants: {
-    extend: {}
+    extend: {},
   },
-  plugins: []
+  plugins: [],
 };
