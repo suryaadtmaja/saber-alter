@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen flex flex-col app bg-home">
+  <div class="h-full flex flex-col app">
     <Navbar />
-    <main class="flex w-full px-4 sm:px-16 h-full">
+    <main class="flex w-full px-12 sm:px-16 h-full pb-6">
       <slot />
     </main>
   </div>
@@ -11,7 +11,7 @@
 import Navbar from "./Navbar";
 export default {
   components: {
-    Navbar
+    Navbar,
   },
   props: ["page"],
   head() {
@@ -20,9 +20,9 @@ export default {
     return {
       title: pageTitle ? `${pageTitle} - ${siteTitle}` : siteTitle,
       bodyAttrs: {
-        class: "flex flex-col min-h-screen"
-      }
+        class: "flex flex-col",
+      },
     };
-  }
+  },
 };
 </script>
